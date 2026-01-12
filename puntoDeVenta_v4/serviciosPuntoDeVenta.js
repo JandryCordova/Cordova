@@ -15,6 +15,6 @@ calcularSubtotal=function(precio,cantidad){
 }
 
 calcularTotal=function(subtotal,descuento,iva){
-    let total=(subtotal-descuento)+iva;
+    let total=subtotal-descuento+iva;
     return total;
 }
