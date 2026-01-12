@@ -32,10 +32,4 @@ limpiar = function () {
     mostrarTexto("lblValorIVA","0.0");
     mostrarTexto("lblTotal","0.0");
     mostrarTexto("lblResumen","");
-    /*
-        Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
-        Dejar todos los textos de los montos con el valor 0.0
-        Si funciona, hacer un commit
-     */
 }
-/* SI TODO FUNCIONA, HACER UN PUSH */
