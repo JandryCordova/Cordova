@@ -7,6 +7,8 @@ saludar=function(){
     console.log(Apellido);
     console.log(Edad);
     console.log(Estatura);
+    let mesajeBienvenidad="Bienvenido " +nombre+ " " +Apellido;
+    mostrarTexto("lblResultado",mesajeBienvenidad);
 
 }
 
@@ -27,4 +29,9 @@ recuperrarFloat=function(idcomponente){
     let valorCaja=recuperrarTexto(idcomponente);
     let Decimal=parseFloat(valorCaja);
     return Decimal.toFixed(2);
+}
+
+mostrarTexto=function(idcomponente,mensaje){
+    let componente=document.getElementById(idcomponente);
+    componente.innerText=mensaje;
 }
