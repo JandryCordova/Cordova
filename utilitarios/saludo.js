@@ -9,6 +9,7 @@ saludar=function(){
     console.log(Estatura);
     let mesajeBienvenidad="Bienvenido " +nombre+ " " +Apellido;
     mostrarTexto("lblResultado",mesajeBienvenidad);
+    mostrarImagen("imgPrueba","./imagenes/Saludo1.gif")
 
 }
 
@@ -34,4 +35,9 @@ recuperrarFloat=function(idcomponente){
 mostrarTexto=function(idcomponente,mensaje){
     let componente=document.getElementById(idcomponente);
     componente.innerText=mensaje;
+}
+
+mostrarImagen=function(idcomponente,rutaImagen){
+    let componente=document.getElementById(idcomponente);
+    componente.src= rutaImagen;
 }
