@@ -4,6 +4,10 @@ calcularPromedioNotas=function(){
     let nota3=recuperarFlotante("txtNota3")
     let promedio=calcularPromedio(nota1,nota2,nota3)
     cambiarTexto("lblResultado",promedio.toFixed(2))
-    
+    if (promedio>7){
+        cambiarImagen("imgResultado","./imagenes/exito.gif");
+    }else{
+        cambiarImagen("imgResultado","./imagenes/fracaso.gif");
+    }
     
 }
