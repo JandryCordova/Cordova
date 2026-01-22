@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="promedioNotas.js"></script>
+        <script src="serviciosPromedioNotas.js"></script>
+        <script src="utilitarios.js"></script>
+        <title> PROMEDIOS DE NOTAS</title>
+    </head>
+    <body>
+        <h3>Ingrese su primera nota: </h3>
+        <input type="text" id="txtNota1" />
+        <h3>Ingrese su segunda nota: </h3>
+        <input type="text" id="txtNota2"/>
+        <h3>Ingrese su tercera nota: </h3>
+        <input type="text" id="txtNota3"/>
+        <p>
+            <input type="button" value="CALCULAR PROMEDIO" onclick="calcularPromedioNotas();"/>
+        </p>
+        <h3>Resultado: </h3>
+        <h3 id="lblResultado"></h3>
+        <p>
+            <img id="imgResultado" width="200px"/>
+        </p>
+    </body>
+</html>
