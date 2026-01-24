@@ -9,4 +9,6 @@ botonCalcular=function(){
     console.log(colesterol);
     let Contraseña=validarClave("txtContraseña");
     console.log(Contraseña);
+    let mayuscula=esMayuscula("txtMayuscula");
+    console.log(mayuscula);
 }

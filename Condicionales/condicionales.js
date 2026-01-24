@@ -80,3 +80,14 @@ validarClave=function(clave){
     }
 
 }
+
+esMayuscula=function(caracter){
+    let Letra=document.getElementById(caracter);
+    let LetraRecu=Letra.value;
+    let LetraEncon=LetraRecu.charCodeAt(0);
+    if(LetraEncon>=65 && LetraEncon<=90){
+        return true;
+    }else{
+        return false;
+    }
+}
