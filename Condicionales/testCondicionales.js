@@ -17,4 +17,6 @@ botonCalcular=function(){
     console.log(Digito);
     let Permiso=darPermiso("txtMatematicas","txtFisica","txtGeometria");
     console.log(Permiso);
+    let OtorgarPermiso=otorgarPermiso("txtMatematicas","txtFisica","txtGeometria");
+    console.log(OtorgarPermiso);
 }
