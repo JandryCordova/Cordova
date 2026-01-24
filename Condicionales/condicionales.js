@@ -113,3 +113,21 @@ esDigito=function(caracter){
         return false;
     }
 }
+
+darPermiso=function(notaMatematica,notaFisica,notaGeometria){
+    let NotaM=document.getElementById(notaMatematica);
+    let NotaMRecu=NotaM.value;
+    let NotaMFloat=parseFloat(NotaMRecu);
+    let NotaF=document.getElementById(notaFisica);
+    let NotaFRecu=NotaF.value;
+    let NotaFFloat=parseFloat(NotaFRecu);
+    let NotaG=document.getElementById(notaGeometria);
+    let NotaGRecu=NotaG.value;
+    let NotaGFloat=parseFloat(NotaGRecu);
+    if(NotaMFloat==90 || NotaFFloat == 90 || NotaGFloat==90){
+        return true;
+    }else{
+        return false;
+    }
+
+}

@@ -15,4 +15,6 @@ botonCalcular=function(){
     console.log(Minuscula);
     let Digito=esDigito("txtMayuscula");
     console.log(Digito);
+    let Permiso=darPermiso("txtMatematicas","txtFisica","txtGeometria");
+    console.log(Permiso);
 }
