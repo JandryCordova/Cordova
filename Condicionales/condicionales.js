@@ -14,3 +14,19 @@ calcularTasaInteres=function(ingresoAnual){
         return valorFloat*12/100
     }
 }
+
+calcularCapacidadPago=function(edad,ingresos,egresos){
+    let edadCarac=document.getElementById(edad);
+    let edadRecu=edadCarac.value;
+    let edadFloat=parseInt(edadRecu);
+    let ingresosCarac=document.getElementById(ingresos);
+    let ingresosRecu=ingresosCarac.value;
+    let ingresosFloat=parseFloat(ingresosRecu);
+    let egresosCarac=document.getElementById(egresos);
+    let egresosRecu=egresosCarac.value;
+    let egresosFloat=parseFloat(egresosRecu);
+    if(edadFloat>50){
+        let Resultado=(ingresosFloat-egresosFloat)
+        return Resultado*30/100; 
+    }
+}
