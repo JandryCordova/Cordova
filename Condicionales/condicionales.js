@@ -52,3 +52,19 @@ calcularDescuento=function(precio,cantidad){
         return total-descuento1
     }
 }
+
+determinarColesterolLDL=function(nivelColesterol){
+    let nivelColesterolCarac=document.getElementById(nivelColesterol);
+    let nivelColesterolRecu=nivelColesterolCarac.value;
+    if(nivelColesterolRecu < 100){
+        return "Nivel de colesterol LDL óptimo";
+    }else if(nivelColesterolRecu>=100 && nivelColesterolRecu<=129){
+        return "Nivel de colesterol LDL casi óptimo";
+    }else if(nivelColesterolRecu>=130 && nivelColesterolRecu<=159){
+        return "Nivel de colesterol LDL límite alto";
+    }else if(nivelColesterolRecu>=160 && nivelColesterolRecu<=189){
+        return "Nivel de colesterol LDL alto";
+    }else {
+        return "Nivel de colesterol LDL muy alto";
+    }
+}
