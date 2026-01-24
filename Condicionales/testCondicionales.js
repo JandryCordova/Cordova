@@ -13,4 +13,6 @@ botonCalcular=function(){
     console.log(mayuscula);
     let Minuscula=esMinuscula("txtMayuscula");
     console.log(Minuscula);
+    let Digito=esDigito("txtMayuscula");
+    console.log(Digito);
 }

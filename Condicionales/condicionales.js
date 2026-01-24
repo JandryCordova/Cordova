@@ -102,3 +102,14 @@ esMinuscula=function(caracter){
         return false;
     }
 }
+
+esDigito=function(caracter){
+    let Numero=document.getElementById(caracter);
+    let NumeroRecu=Numero.value;
+    let NumeroEncon=NumeroRecu.charCodeAt(0);
+    if (NumeroEncon>=48 && NumeroEncon<=57){
+        return true;
+    }else{
+        return false;
+    }
+}
