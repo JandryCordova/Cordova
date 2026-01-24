@@ -148,3 +148,20 @@ otorgarPermiso=function(notaMate,notaFisica,notaGeome){
         return false;
     }
 }
+
+dejarSalir=function(notaMate,notaFisica,notaGeome){
+    let NotaM=document.getElementById(notaMate);
+    let NotaMRecu=NotaM.value;
+    let NotaMFloat=parseFloat(NotaMRecu);
+    let NotaF=document.getElementById(notaFisica);
+    let NotaFRecu=NotaF.value;
+    let NotaFFloat=parseFloat(NotaFRecu);
+    let NotaG=document.getElementById(notaGeome);
+    let NotaGRecu=NotaG.value;
+    let NotaGFloat=parseFloat(NotaGRecu);
+    if(NotaMFloat>90 && NotaFFloat>90 && NotaGFloat>90 && NotaFFloat>NotaMFloat){
+        return true;
+    }else{
+        return false;
+    }
+}
