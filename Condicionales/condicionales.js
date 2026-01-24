@@ -30,3 +30,25 @@ calcularCapacidadPago=function(edad,ingresos,egresos){
         return Resultado*30/100; 
     }
 }
+
+calcularDescuento=function(precio,cantidad){
+    let PrecioCarac=document.getElementById(precio);
+    let PrecioRecu=PrecioCarac.value;
+    let PrecioFloat=parseFloat(PrecioRecu);
+    let CantidadCarac=document.getElementById(cantidad);
+    let CantidadRecu=CantidadCarac.value;
+    let CantidadInt=parseInt(CantidadRecu);
+    let total=CantidadInt*PrecioFloat;
+    if(CantidadInt<3){
+        return total;
+    }else if(CantidadInt>=3 && CantidadInt<=5){
+        let descuento1=(CantidadInt*PrecioFloat)*2/100;
+        return total-descuento1
+    }else if(CantidadInt>=6 && CantidadInt<=11){
+        let descuento1=(CantidadInt*PrecioFloat)*3/100;
+        return total-descuento1
+    }else{
+        let descuento1=(CantidadInt*PrecioFloat)*4/100;
+        return total-descuento1
+    }
+}
