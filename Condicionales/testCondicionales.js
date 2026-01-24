@@ -11,4 +11,6 @@ botonCalcular=function(){
     console.log(Contraseña);
     let mayuscula=esMayuscula("txtMayuscula");
     console.log(mayuscula);
+    let Minuscula=esMinuscula("txtMayuscula");
+    console.log(Minuscula);
 }

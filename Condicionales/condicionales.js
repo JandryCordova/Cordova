@@ -91,3 +91,14 @@ esMayuscula=function(caracter){
         return false;
     }
 }
+
+esMinuscula=function(caracter){
+    let Letra=document.getElementById(caracter);
+    let LetraRecu=Letra.value;
+    let LetraEncon=LetraRecu.charCodeAt(0);
+    if(LetraEncon>=97 && LetraEncon<=122){
+        return true;
+    }else{
+        return false;
+    }
+}
