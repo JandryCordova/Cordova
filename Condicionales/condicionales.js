@@ -68,3 +68,15 @@ determinarColesterolLDL=function(nivelColesterol){
         return "Nivel de colesterol LDL muy alto";
     }
 }
+
+validarClave=function(clave){
+    let ClaveCarac=document.getElementById(clave);
+    let ClaveRecu=ClaveCarac.value;
+    let ResuClave=ClaveRecu.length;
+    if(ResuClave>=8 && ResuClave<=16){
+        return true;
+    }else{
+        return false;
+    }
+
+}

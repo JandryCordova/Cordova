@@ -7,4 +7,6 @@ botonCalcular=function(){
     console.log(Descuento);
     let colesterol=determinarColesterolLDL("txtColesterol");
     console.log(colesterol);
+    let Contraseña=validarClave("txtContraseña");
+    console.log(Contraseña);
 }
