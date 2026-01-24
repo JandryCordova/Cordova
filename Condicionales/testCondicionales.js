@@ -9,11 +9,11 @@ botonCalcular=function(){
     console.log(colesterol);
     let Contraseña=validarClave("txtContraseña");
     console.log(Contraseña);
-    let mayuscula=esMayuscula("txtMayuscula");
+    let mayuscula=esMayuscula("txtCaracter");
     console.log(mayuscula);
-    let Minuscula=esMinuscula("txtMayuscula");
+    let Minuscula=esMinuscula("txtCaracter");
     console.log(Minuscula);
-    let Digito=esDigito("txtMayuscula");
+    let Digito=esDigito("txtCaracter");
     console.log(Digito);
     let Permiso=darPermiso("txtMatematicas","txtFisica","txtGeometria");
     console.log(Permiso);

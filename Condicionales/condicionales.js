@@ -28,6 +28,9 @@ calcularCapacidadPago=function(edad,ingresos,egresos){
     if(edadFloat>50){
         let Resultado=(ingresosFloat-egresosFloat)
         return Resultado*30/100; 
+    }else{
+        let Resultado=(ingresosFloat-egresosFloat)
+        return Resultado*40/100; 
     }
 }
 
