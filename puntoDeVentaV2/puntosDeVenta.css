@@ -1,0 +1,92 @@
+body{
+background-color: black;
+margin-top: 200px;
+}
+
+.pantallaPrincipal{
+    background-color: darkgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+
+}
+
+.cajaDatos{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    flex: 1;
+}
+
+.cajaRespuesta{
+    justify-content: flex-end;
+    flex: 1;
+    border-radius: 2px;
+    border-color: #4caf50;
+    font-size: 20px;
+    color:rgb(85, 83, 83);
+}
+
+.IngresoDatos{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.MostrarResultados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ResultadoGeneral{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 300px;
+}
+.areaResultado{
+    display: flex;
+    justify-content: center;
+}
+
+.TituloVenta{
+    display: flex;
+    justify-content: center;
+}
+
+.logoImagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ParDeBotones{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.EstiloBoton input{
+    background-color: #4CAF50;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    color: white;margin: 5px;
+    border: none;
+    width: 150px;
+}
