@@ -36,3 +36,18 @@ determinarGanador=function(eleccionJugador1,eleccionJugador2){
     console.log(eleccionJugador2)
     return 2;
 }
+
+generarRuta=function(nombre){
+    let imagen = "/imagenes/sorpresa.jpg"
+    if (nombre == "PIEDRA"){
+        imagen = "/imagenes/piedra.jpg"
+    }
+    if (nombre == "PAPEL"){
+        imagen ="/imagenes/papel.jpg"
+    }
+    if (nombre == "TIJERA"){
+        imagen ="/imagenes/tijera.jpg"
+    }
+    mostrarImagen("imgSorpresa",imagen);
+    return imagen;
+}
