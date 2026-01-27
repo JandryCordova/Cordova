@@ -22,12 +22,24 @@ validarPlaca=function(){
         }else{
             mostrarTexto("lblTipoVehiculo",TipoVehiculo);
         }
+        let picoPlaca=obtenerDiaPicoYPlaca(placa);
+        mostrarTexto("lblPicoPlaca",picoPlaca);
     }else{
+        mostrarTexto("lblPicoPlaca","");
         mostrarTexto("lblTipoVehiculo","");
         mostrarTexto("lblProvincia","");
         mostrarTexto("lblError","ESTRUCTURA INCORRECTO");
         mostrarTexto("lblErrores",erroresEstructura);
         lblError.style.color= "red";
     }
+    
+}
+Limpiar=function(){
+    mostrarTexto("lblPicoPlaca","");
+    mostrarTexto("lblTipoVehiculo","");
+    mostrarTexto("lblProvincia","");
+    mostrarTexto("lblErrores","");
+    mostrarTexto("lblError","");
+    document.getElementById("txtPlaca").value="";
     
 }

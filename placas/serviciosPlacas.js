@@ -111,22 +111,44 @@ obtenerProvincia=function(Placa){
 obtenerTipoVehiculo=function(placa){
     let Tipo=placa.charCodeAt(1);
     if (Tipo == 65 || Tipo == 90){
-        return "Vehiculos Comerciales"
+        return "VEHICULOS COMERCIALES"
     }
     if (Tipo == 69){
-        return "Vehiculos Gubernamentales"
+        return "VEHICULOS GUBERNAMENTALES"
     }
     if (Tipo == 88){
-        return "Vehiculos de uso oficial"
+        return "VEHICULOS DE USO OFICIAL"
     }
     if (Tipo == 83){
-        return "Vehiculos del gobierno provincial"
+        return "VEHICULOS DEL GOBIERNO PROVINCIAL"
     }
     if (Tipo == 77){
-        return "Vehiculos municipales"
+        return "VEHICULOS MUNICIPALES"
     }
     if (Tipo != 65 & Tipo != 90 & Tipo != 69 & Tipo != 88 & Tipo != 83 & Tipo != 77 ){
-        return "Vehiculos Particular"
+        return "VEHICULOS PARTICULAR"
     }
     return null;
+}
+
+obtenerDiaPicoYPlaca=function(placa){
+    let Ultimo=placa.length -1;
+    let numero=placa.charAt(Ultimo);
+    if (numero == "1" || numero == "2"){
+        return "PICO Y PLACA EL LUNES"
+    }
+    if (numero == "3" || numero == "4" ){
+        return "PICO Y PLACA EL MARTES"
+    }
+    if (numero == "5" || numero == "6"){
+        return "PICO Y PLACA EL MIERCOLES"
+    }
+    if (numero == "7" || numero == "8"){
+        return "PICO Y PLACA EL JUEVES"
+    }
+    if (numero == "9" || numero == "0"){
+        return "PICO Y PLACA EL VIERNES"
+    }
+    return "SABADO, DOMINGOS Y FERIADOS TIENE LIBRE CIRCULACION"
+    
 }
