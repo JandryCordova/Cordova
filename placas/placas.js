@@ -6,7 +6,6 @@ validarPlaca=function(){
     if (erroresEstructura == null){
         mostrarTexto("lblErrores","");
         mostrarTexto("lblError","");
-        
         mostrarTexto("lblError","ESTRUCTURA VALIDAD");
         lblError.style.color = "green";
         let provincia=obtenerProvincia(placa);
@@ -17,7 +16,14 @@ validarPlaca=function(){
             mostrarTexto("lblProvincia",provincia);
             lblProvincia.style.color= "beige";
         }
+        let TipoVehiculo=obtenerTipoVehiculo(placa);
+        if (TipoVehiculo == null){
+            mostrarTexto("lblTipoVehiculo","TIPO DE VEHICULO INCORRECTO");
+        }else{
+            mostrarTexto("lblTipoVehiculo",TipoVehiculo);
+        }
     }else{
+        mostrarTexto("lblTipoVehiculo","");
         mostrarTexto("lblProvincia","");
         mostrarTexto("lblError","ESTRUCTURA INCORRECTO");
         mostrarTexto("lblErrores",erroresEstructura);

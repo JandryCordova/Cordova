@@ -107,3 +107,26 @@ obtenerProvincia=function(Placa){
     }
     return null;
 }
+
+obtenerTipoVehiculo=function(placa){
+    let Tipo=placa.charCodeAt(1);
+    if (Tipo == 65 || Tipo == 90){
+        return "Vehiculos Comerciales"
+    }
+    if (Tipo == 69){
+        return "Vehiculos Gubernamentales"
+    }
+    if (Tipo == 88){
+        return "Vehiculos de uso oficial"
+    }
+    if (Tipo == 83){
+        return "Vehiculos del gobierno provincial"
+    }
+    if (Tipo == 77){
+        return "Vehiculos municipales"
+    }
+    if (Tipo != 65 & Tipo != 90 & Tipo != 69 & Tipo != 88 & Tipo != 83 & Tipo != 77 ){
+        return "Vehiculos Particular"
+    }
+    return null;
+}
