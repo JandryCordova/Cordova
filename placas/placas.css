@@ -1,0 +1,54 @@
+body{
+    background-image: url("Fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+.Informacion{
+    background-color: rgba(18, 21, 24, 0.915);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 350px;
+    margin-right: 350px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.BotonInformacion{
+    margin: 10px;
+    width: 260px;
+    font-size: 24px;
+    background-color: cornsilk;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.pantallaPrincipal{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+}
+
+.TituloPrincipal{
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.RespuetaInformacion{
+    margin: 10px;
+    width: 260px;
+    font-size: 24px;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
