@@ -36,9 +36,11 @@ determinarGanador=function(eleccionJugador1,eleccionJugador2){
 }
 
 generarRuta=function(nombre){
+    
     let imagen = ""
     if (nombre == "PIEDRA"){
         imagen = "imagenes/piedra.jpg"
+
     }
     if (nombre == "PAPEL"){
         imagen ="imagenes/papel.jpg"
@@ -47,5 +49,11 @@ generarRuta=function(nombre){
         imagen ="imagenes/tijera.jpg"
     }
     mostrarImagen("imgSorpresa",imagen);
+
+    let img = document.getElementById("imgSorpresa");
+    img.src = imagen;
+    img.style.width = "360px";
+    img.style.height = "360px";
+
     return imagen;
 }

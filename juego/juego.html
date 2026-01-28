@@ -14,17 +14,26 @@
         </div>
         <div class="Imagenes">
             <div class="ImgJugador1">
-                <div class="Jug1"> JUGADOR </div>
+                <div class="estiloJug">
+                    <div class="Jug1"> JUGADOR </div>
+                    <div class="PuntJug">PUNTOS: </div>
+                    <div class="ValorPuntJug" id="lblRespuestaJuga">0</div>
+                </div>
                 <div class="PiedraPapel">
-                    <img src="imagenes/piedra.jpg" width="200px" onclick="jugar('PIEDRA');" class="BotonImgJugador">
-                    <img src="imagenes/papel.jpg" width="200px" onclick="jugar('PAPEL');" class="BotonImgJugador">
+                    <img src="imagenes/piedra.jpg" width="200px" onclick="jugar('PIEDRA');" class="BotonImgJugador" id="btnPiedra">
+                    <img src="imagenes/papel.jpg" width="200px" onclick="jugar('PAPEL');" class="BotonImgJugador" id="btnPapel">
                 </div>
                 <div class="Tijera">
-                    <img src="imagenes/tijera.jpg" width="200px" onclick="jugar('TIJERA');" class="BotonImgJugador">
+                    <img src="imagenes/tijera.jpg" width="200px" onclick="jugar('TIJERA');" class="BotonImgJugador" id="btnTijera">
+                    <input type="button" value="Nueva Partida" onclick="limpiar();" class="NuevaPartida" id="btnNuevaPartida" disabled="true">
                 </div>
             </div>
-            <div>
-                <div class="Compu"> COMPUTADORA </div>
+            <div class="ImgJugador2">
+                <div class="estiloCompu">
+                    <div class="Compu"> COMPUTADORA </div>
+                    <div class="PuntCompu">PUNTOS: </div>
+                    <div class="ValorPuntCompu" id="lblRespuestaCompu">0</div>
+                </div>
                 <img src="imagenes/sorpresa.jpg" width="300px" id="imgSorpresa" class="BotonImgComputadora">
             </div>
         </div>
