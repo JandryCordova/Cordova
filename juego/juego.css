@@ -1,0 +1,89 @@
+body{
+    background-image: url("imagenes/FondoPared.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.TituloPrincipal{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Imagenes{
+    background-color: burlywood;
+    border-radius: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.ImgJugador1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.PiedraPapel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.BotonImgJugador{
+    border-radius: 20px;
+    width: 200px;
+    margin: 10px;
+    
+    
+}
+
+.BotonImgComputadora{
+    border-radius: 20px;
+    width: 360px;
+    margin: 10px;
+}
+
+.Compu{
+    display: flex;
+    justify-content: center;
+    color: darkslategrey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+
+}
+
+.Jug1{
+    display: flex;
+    justify-content: center;
+    color: darkslategrey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    width: 500px;
+    
+}
+.respuesta{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    color: green;
+}
+

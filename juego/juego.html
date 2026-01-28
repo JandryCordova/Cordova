@@ -9,21 +9,26 @@
 </head>
 <body>
     <div>
-        <div>
+        <div class="TituloPrincipal">
             JUEGA PIEDRA PAPEL O TIJERA
         </div>
-        <div>
-            <img src="imagenes/piedra.jpg" width="200px">
-            <img src="imagenes/papel.jpg" width="200px">
-            <img src="imagenes/tijera.jpg" width="200px">
+        <div class="Imagenes">
+            <div class="ImgJugador1">
+                <div class="Jug1"> JUGADOR </div>
+                <div class="PiedraPapel">
+                    <img src="imagenes/piedra.jpg" width="200px" onclick="jugar('PIEDRA');" class="BotonImgJugador">
+                    <img src="imagenes/papel.jpg" width="200px" onclick="jugar('PAPEL');" class="BotonImgJugador">
+                </div>
+                <div class="Tijera">
+                    <img src="imagenes/tijera.jpg" width="200px" onclick="jugar('TIJERA');" class="BotonImgJugador">
+                </div>
+            </div>
+            <div>
+                <div class="Compu"> COMPUTADORA </div>
+                <img src="imagenes/sorpresa.jpg" width="300px" id="imgSorpresa" class="BotonImgComputadora">
+            </div>
         </div>
-        <div>
-            <img src="imagenes/sorpresa.jpg" width="300px">
-        </div>
-        <div>
-            <input type="button" value="OBTENER" onclick="generarElemento();" ondblclick="obtenerAleatorio();" />
-        </div>
-        <div>
+        <div class="respuesta">
             <h3 id="lblRespuesta"></h3>
         </div>
     </div>
