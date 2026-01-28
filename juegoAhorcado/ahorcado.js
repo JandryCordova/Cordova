@@ -18,11 +18,14 @@ guardarPalabra = function (){
                 mayuscula++;
             }
         }
-        palabraSecreta = palabra;
-        console.log(palabraSecreta);
-
-    }else{
+        if(mayuscula == 5){
+            palabraSecreta = palabra;
+            console.log(palabraSecreta);
+        }else{
             alert ("Debe ingresar una palabra de 5 Letras Mayusculas");
+        }
+    }else{
+            alert ("Solo se permite una palabra de 5 letras");
     }
 }
 
@@ -47,9 +50,20 @@ mostrarLetra = function (letra, posicion){
 validar = function (letra){
     let letrasEncontradas = 0;
     for (let a=0 ; a<palabraSecreta.length;a++){
-        if ( a == letra){
+        let Letra2 = palabraSecreta.charAt(a)
+        if ( Letra2 == letra){
             mostrarLetra(letra,a);
             letrasEncontradas++;
         }
     }
+    
+}
+ingresarLetra = function (){
+    let letra = recuperarTexto("txtLetra");
+    if (esMayuscula(letra)){
+        validar(letra);
+    }else{
+        alert("Solo se aceptan letras mayusculas")
+    }
+    mostrarTextoEnCaja("txtLetra","");
 }
