@@ -63,10 +63,15 @@ validar = function (letra){
         alert("La letra no es parte de la palabra"); 
         errores = errores + 1; 
         console.log("Errores: ", errores); 
+        mostrarAhorcado();
     } else { 
         coincidencias = coincidencias + letrasEncontradas; 
         console.log("Coincidencias: ", coincidencias); 
     }
+    if (coincidencias==5){
+        mostrarImagen("ahorcadoImagen","ganador.gif");
+    }
+    
 }
 ingresarLetra = function (){
     let letra = recuperarTexto("txtLetra");
@@ -84,5 +89,39 @@ ingresarLetra = function (){
     
     mostrarTextoEnCaja("txtLetra","");
     intentos++;
-    console.log(intentos);
+    console.log("Intentos: ",intentos);
+    if (intentos==10){
+        mostrarImagen("ahorcadoImagen","gameOver.gif");
+    }
+}
+
+mostrarAhorcado = function (){
+    if (errores==1){
+        mostrarImagen("ahorcadoImagen","Ahorcado_01.png");
+    }
+    if (errores==2){
+        mostrarImagen("ahorcadoImagen","Ahorcado_02.png");
+    }
+    if (errores==3){
+        mostrarImagen("ahorcadoImagen","Ahorcado_03.png");
+    }
+    if (errores==4){
+        mostrarImagen("ahorcadoImagen","Ahorcado_04.png");
+    }
+    if (errores==5){
+        mostrarImagen("ahorcadoImagen","Ahorcado_05.png");
+    }
+    if (errores==6){
+        mostrarImagen("ahorcadoImagen","Ahorcado_06.png");
+    }
+    if (errores==7){
+        mostrarImagen("ahorcadoImagen","Ahorcado_07.png");
+    }
+    if (errores==8){
+        mostrarImagen("ahorcadoImagen","Ahorcado_08.png");
+    }
+    if (errores==9){
+        mostrarImagen("ahorcadoImagen","Ahorcado_09.png");
+    }
+    
 }
