@@ -1,4 +1,4 @@
-
+let aleatorios = [];
 numerosAleatorios = function(){
     let aleatorio = Math.random(0,100);
     let numero = (aleatorio * 100)+1;
@@ -10,7 +10,6 @@ numerosAleatorios = function(){
 }
 
 generarAleatorios = function(){
-    let aleatorios=[];
     let numeroRecu = recuperrarInt("txtNumero");
     if (numeroRecu>=5 && numeroRecu<=20){
         for ( let a=0 ; a<numeroRecu;a++){
