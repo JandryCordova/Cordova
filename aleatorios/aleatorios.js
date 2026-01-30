@@ -1,25 +1,30 @@
 
 numerosAleatorios = function(){
-    let numeroRecu = recuperrarInt("txtNumero");
+    let aleatorio = Math.random(0,100);
+    let numero = (aleatorio * 100)+1;
+    let numeroRecu = parseInt(numero);
     if (numeroRecu>=0 && numeroRecu<=100){
         return numeroRecu;
-    }else{
-        console.log("DEBE INGRESAR UN NUMERO ENTRE 0 A 100")
     }
+    
 }
 
 generarAleatorios = function(){
     let aleatorios=[];
-    let numeroRecu = numerosAleatorios();
+    let numeroRecu = recuperrarInt("txtNumero");
     if (numeroRecu>=5 && numeroRecu<=20){
         for ( let a=0 ; a<numeroRecu;a++){
-            console.log(a);
+            console.log("Indice",a);
             let ValorObt = numerosAleatorios();
             aleatorios = ValorObt
             console.log( aleatorios);
         }
         mostrarResultados(aleatorios);
+    }else{
+        console.log("Este numero no esta dentro del rango del 5 al 20")
     }
+        
+    
 }
 
 mostrarResultados = function(arregloNumeros){
