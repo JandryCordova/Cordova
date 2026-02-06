@@ -61,3 +61,119 @@ ejecutarNuevo=function(){
     esNuevo = true;
 
 }
+
+buscarEmpleado=function(cedula){
+    let empleadoEncontrado;
+    for (let a=0;a<empleados.length;a++){
+        empleadoEncontrado=empleados[a];
+        if(empleadoEncontrado.cedula==cedula){
+            return empleadoEncontrado;
+        }
+    }
+    return null;
+}
+
+agregarEmpleados=function(empleado){
+    let resultado;
+    resultado=buscarEmpleado(empleado.cedula);
+    if (resultado==null){
+        empleados.push(empleado);
+        alert ("Cliente Agregado");
+        mostrarEmpleados();
+        return true;
+    }else{
+        alert("Ya existe el cliente con la cedula "+empleado.cedula);
+        return false;
+    }
+}
+
+guardar=function(){
+    let valorCedula=recuperarTexto("txtCedula");
+    let valorNombre=recuperarTexto("txtNombre");
+    let valorApellido=recuperarTexto("txtApellido");
+    let valorSueldo=recuperarTexto("txtSueldo");
+    let cedula;
+    let nombre;
+    let apellido;
+    let esValido=true;
+
+    if(valorCedula.length==10){
+        mostrarTexto("lblErrorCedula","");
+        for(let a=0;a<valorCedula.length;a++){
+            cedula=valorCedula.charCodeAt(a);
+            if (cedula>=48 && cedula<=57){
+                mostrarTexto("lblErrorCedula","");           
+            }else{
+                mostrarTexto("lblErrorCedula","Solo ingrese digitos");
+                esValido=false;
+                break;
+            }
+        }
+        
+    }else{
+        mostrarTexto("lblErrorCedula","Solo puede ingresar 10 digitos");
+        esValido=false;
+    }
+    if (valorNombre.length>=3){
+        mostrarTexto("lblErrorNombre","");
+        for(let a=0;a<valorNombre.length;a++){
+            nombre=valorNombre.charCodeAt(a);
+            if(nombre>=65 && nombre<=90){
+                mostrarTexto("lblErrorNombre","");
+            }else{
+                mostrarTexto("lblErrorNombre","Solo puede ingresar letras mayusculas");
+                esValido=false;
+                break;
+            }
+        }
+    }else{
+        mostrarTexto("lblErrorNombre","Deber tener mas de 3 caracteres");
+        esValido=false;
+    }
+    
+    if (valorApellido.length>=3){
+        mostrarTexto("lblErrorApellido","");
+        for(let a=0;a<valorApellido.length;a++){
+            apellido=valorApellido.charCodeAt(a);
+            if(apellido>=65 && apellido<=90){
+                mostrarTexto("lblErrorApellido","");
+            }else{
+                mostrarTexto("lblErrorApellido","Solo puede ingresar letras mayusculas");
+                esValido=false;
+                break;
+            }
+        }
+    }else{
+        mostrarTexto("lblErrorApellido","Deber tener mas de 3 caracteres");
+        esValido=false;
+    }
+
+    if(!isNaN(valorSueldo)){
+        if(valorSueldo>=400 && valorSueldo<=5000){
+            mostrarTexto("lblErrorSueldo","");
+        }else{
+            mostrarTexto("lblErrorSueldo","El valor debe estar entre $400 y $5000");
+            esValido=false;
+        }
+    }else{
+        mostrarTexto("lblErrorSueldo","Debe ser un numero flotante");
+        esValido=false;
+    }
+    
+    if(esValido==true){ 
+        let empleado={}; 
+        empleado.cedula=valorCedula; 
+        empleado.nombre=valorNombre; 
+        empleado.apellido=valorApellido; 
+        empleado.sueldo=valorSueldo; 
+        if(esNuevo==true){ 
+            let resultado=agregarEmpleados(empleado); 
+            if(resultado==true){ 
+                alert("EMPLEADO GUARDADO CORRECTAMENTE"); 
+                mostrarEmpleados(); 
+            }else{ 
+                alert("YA EXISTE UN EMPLEADO CON LA CEDULA "+empleado.cedula); 
+            } 
+        }
+    }
+}
