@@ -225,3 +225,17 @@ ejecutarBusqueda=function(){
         esNuevo=false;
     }
 }
+
+//Funciones y todo sobre el boton Rol
+
+buscarPorRol=function(){
+    let cedulaRol=recuperarInt("txtBusquedaCedulaRol")
+    let empleado=buscarEmpleado(cedulaRol);
+    if (empleado!=null){
+        mostrarTexto("infoCedula",empleado.cedula);
+        mostrarTexto("infoNombre",empleado.nombre + " " + empleado.apellido);
+        mostrarTexto("infoSueldo",empleado.sueldo);
+    }else{
+        alert ("No existe empleado");
+    }
+}
