@@ -1,4 +1,6 @@
 let esNuevo = false;
+let roles=[];
+
 
 let empleados = [
     {cedula:"1714616123",nombre:"John",apellido:"Cena",sueldo:500.0},
@@ -17,6 +19,7 @@ mostrarOpcionRol=function(){
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
+    deshabilitarComponente("btnGuardarRol");
 }
 
 mostrarOpcionResumen=function(){
@@ -227,7 +230,6 @@ ejecutarBusqueda=function(){
 }
 
 //Funciones y todo sobre el boton Rol
-
 buscarPorRol=function(){
     let cedulaRol=recuperarInt("txtBusquedaCedulaRol")
     let empleado=buscarEmpleado(cedulaRol);
@@ -261,4 +263,63 @@ calcularRol=function(){
     }else{
         alert ("El valor es mayor que su Sueldo");
     }
+    habilitarComponente("btnGuardarRol");
+    deshabilitarComponente("btnCalculaRol");
+}
+
+buscarRol=function(cedula){
+    let resultado;
+    for(let i=0; i<roles.length; i++){
+        resultado=roles[i];
+        if(resultado == cedula){
+            return resultado;
+        }
+    }
+    return null;
+}
+
+agregarRol=function(Rol){
+    let resultado=buscarRol(Rol);
+    if (resultado == null){
+        roles.push(Rol);
+        alert ("ROL AGREGADO EXITOSAMENTE");
+        return true;
+    }else{
+        alert ("YA EXISTE UN ROL CON LA CEDULA ", Rol);
+        return false;
+    }
+}
+
+calcularAporteEmpleador=function(sueldoAporteEm){
+    let resultado=sueldoAporteEm*11.15/100;
+    return resultado;
+}
+
+guardarRol=function(){
+    let nombreRol=recuperarTextDiv("infoNombre");
+    let cedulaRol=recuperarTextDiv("infoCedula");
+    let sueldoRol=recuperarFloatDiv("infoSueldo");
+    let valorPagar=recuperarFloatDiv("infoPago");
+    let aporteEmpleado=recuperarFloatDiv("infoIESS");
+    let resultadoAporte=calcularAporteEmpleador(sueldoRol);
+    let rol={
+        nombre: nombreRol,
+        cedula: cedulaRol,
+        sueldo: sueldoRol,
+        valorAPagar: valorPagar , 
+        aporteEmpleado: aporteEmpleado,
+        AporteAlIESS: resultadoAporte 
+    }
+    let RolAgg=agregarRol(rol.cedula);
+    if (RolAgg == true){
+        alert ("GUARDADO CON EXITO");
+        deshabilitarComponente("btnGuardarRol");
+        habilitarComponente("btnCalculaRol");
+        
+    }else{
+        alert ("Error");
+        deshabilitarComponente("btnGuardarRol");
+        habilitarComponente("btnCalculaRol");
+    }
+    
 }
