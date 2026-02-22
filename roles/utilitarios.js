@@ -24,16 +24,34 @@ recuperarTexto=function(idComponente){
 }
 
 recuperarInt = function(idComponente){
-   let valorCaja= recuperarTexto(idComponente);
-   let valorEntero = parseInt(valorCaja);
-   return valorEntero;
+    let valorCaja= recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
 }
 
 recuperarFloat = function(idComponente){
     let valorCaja= recuperarTexto(idComponente);
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
- }
+}
+
+recuperarTextDiv=function(idComponente){
+    let Componente=document.getElementById(idComponente);
+    let valorIngresado=Componente.textContent;
+    return valorIngresado
+}
+
+recuperarIntDiv=function(idComponente){
+    let valorRecuperado=recuperarTextDiv(idComponente);
+    let valorEntero=parseInt(valorRecuperado);
+    return valorEntero;
+}
+
+recuperarFloatDiv=function(idComponente){
+    let valorRecuparado=recuperarTextDiv(idComponente);
+    let valorFloat=parseFloat(valorRecuparado);
+    return valorFloat;
+}
 
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
