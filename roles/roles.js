@@ -364,5 +364,8 @@ mostrarTotales=function(){
     mostrarTexto("infoAporteEmpresa",totalEmpleado.toFixed(2));
     mostrarTexto("infoAporteEmpleado",totalEmpleador.toFixed(2));
     
+    let TotalNomina = totalAPagar + totalEmpleado + totalEmpleador;
+    mostrarTexto("infoTotalNomina",TotalNomina.toFixed(2));
+
 
 }
