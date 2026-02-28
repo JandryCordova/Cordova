@@ -3,19 +3,27 @@
     <head>
         <script src="orden.js"></script>
         <script src="utilitarios.js"></script>
+        <link rel="stylesheet" href="orden.css">
     </head>
-    <body>
-        <div>
-            <h3>Ingrese su nombre:</h3>
-            <input type"text" id="CajaTextoNombre">
-            <h3 id="ErrorCajaTexoNombre"></h3>
-            <h3>Ingrese su edad:</h3>
-            <input type"text" id="CajaTextoEdad">
-            <h3 id="ErrorCajaTexoEdad"></h3>
+    <body onload="mostrarTabla();">
+        <div class="TituloPrincipal">Encuentra la Persona Mayor</div>
+        <div class="InformacionDatos">
+            <div class="DatosIngresados">
+                <div class="DatosNombre">
+                    <h3>Ingrese su nombre:</h3>
+                    <input type"text" id="CajaTextoNombre" class="Caja">
+                    <h3 id="ErrorCajaTexoNombre"></h3>
+                </div>
+                <div class="DatosEdad">
+                    <h3>Ingrese su edad:</h3>
+                    <input type"text" id="CajaTextoEdad" class="Caja">
+                    <h3 id="ErrorCajaTexoEdad"></h3>
+                </div>
+                <div class="Boton">
+                    <input type="button" value="Guardar" class="BotonGuardar" onclick="agregarPersona();">
+                </div>
+            </div>
+            <div id="TablaDeDatos" class="TabladeDatosC"></div>
         </div>
-        <div>
-            <input type="button" value="Guardar" onclick="agregarPersona();">
-        </div>
-        
     </body>
 </html>

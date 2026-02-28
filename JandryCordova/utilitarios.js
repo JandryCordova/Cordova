@@ -1,34 +1,70 @@
-recuperrarTexto=function(idcomponente){
-    let nombre=document.getElementById(idcomponente);
-    let valorRecuperado=nombre.value;
-    return valorRecuperado;
 
+mostrarImagen=function(idComponente,rutaImagen){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src =  rutaImagen;
+}
+mostrarTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText = mensaje;
+}
+mostrarTextoEnCaja = function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.value = mensaje;
 }
 
-recuperrarInt=function(idcomponente){
-    let valorCaja=recuperrarTexto(idcomponente);
-    let Entero=parseInt(valorCaja);
-    return Entero;
+recuperarTexto=function(idComponente){
+    let componente;
+    let valorIngresado;
+    componente=document.getElementById(idComponente);
+    valorIngresado=componente.value;
+    return valorIngresado;
 }
 
-recuperrarFloat=function(idcomponente){
-    let valorCaja=recuperrarTexto(idcomponente);
-    let Decimal=parseFloat(valorCaja);
-    return Decimal.toFixed(2);
+recuperarInt = function(idComponente){
+    let valorCaja= recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
 }
 
-mostrarTexto=function(idcomponente,mensaje){
-    let componente=document.getElementById(idcomponente);
-    componente.innerText=mensaje;
+recuperarFloat = function(idComponente){
+    let valorCaja= recuperarTexto(idComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
 }
 
-mostrarImagen=function(idcomponente,rutaImagen){
-    let componente=document.getElementById(idcomponente);
-    componente.src= rutaImagen;
-}
-mostrarTextoEnCaja=function(idcomponente,mensaje){
-    let componente=document.getElementById(idcomponente);
-    componente.value=mensaje;
+recuperarTextDiv=function(idComponente){
+    let Componente=document.getElementById(idComponente);
+    let valorIngresado=Componente.textContent;
+    return valorIngresado
 }
 
+recuperarIntDiv=function(idComponente){
+    let valorRecuperado=recuperarTextDiv(idComponente);
+    let valorEntero=parseInt(valorRecuperado);
+    return valorEntero;
+}
 
+recuperarFloatDiv=function(idComponente){
+    let valorRecuparado=recuperarTextDiv(idComponente);
+    let valorFloat=parseFloat(valorRecuparado);
+    return valorFloat;
+}
+
+mostrarComponente = function(idComponente){
+    document.getElementById(idComponente).style.display = "block";
+}
+
+ocultarComponente = function(idComponente){
+    document.getElementById(idComponente).style.display = "none";
+}
+
+deshabilitarComponente = function(idComponente){
+    document.getElementById(idComponente).disabled = true;
+}
+
+habilitarComponente = function(idComponente){
+    document.getElementById(idComponente).disabled = false;
+}

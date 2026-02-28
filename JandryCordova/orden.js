@@ -8,8 +8,8 @@ let Personas=[
 ]
 
 agregarPersona=function(){
-    let NombrePerso=recuperrarTexto("CajaTextoNombre");
-    let EdadPersona=recuperrarInt("CajaTextoEdad");
+    let NombrePerso=recuperarTexto("CajaTextoNombre");
+    let EdadPersona=recuperarInt("CajaTextoEdad");
     let tamanoNombre=NombrePerso.length;
     if(tamanoNombre>=3){
         mostrarTexto("ErrorCajaTexoNombre","");
@@ -32,10 +32,33 @@ agregarPersona=function(){
         }
         Personas.push(nuevaPersona);
         alert ("Se agrego con exito a " + NombrePerso);
+        mostrarDatosTabla();
     }else{
         alert ("No se pudo agregar a " + NombrePerso);
     }
     
+}
+
+mostrarDatosTabla=function(){
+    let cmpTablaDatos=document.getElementById("TablaDeDatos");
+    let contenido="<table>"+
+    "<th>EDAD</th>"+
+    "<th>NOMBRE</th>"
+
+    let DatosPersona;
+    for ( let a=0; a<Personas.length; a++){
+        DatosPersona=Personas[a];
+        contenido+="<tr><td>"+DatosPersona.edad+"</td>"+
+        "<td>"+DatosPersona.nombre+"</td>"+
+        "</tr>"
+    }
+    contenido+="</table>"
+    cmpTablaDatos.innerHTML=contenido;
+
+}
+
+mostrarTabla=function(){
+    mostrarDatosTabla();
 }
  //for (let i=0; i<EdadPersona.length; i++){
    //             if(CodigoPersona>=48 && CodigoPersona <=100){
