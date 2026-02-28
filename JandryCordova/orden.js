@@ -88,8 +88,6 @@ encontrarMenor=function(){
         console.log(elementoPersona);
         if(elementoPersona.edad < personaMenor.edad){
             personaMenor=elementoPersona
-        }else{
-            mostrarTexto("ResultadoMenor",elementoPersona.nombre+ " y " +personaMenor.nombre+ " tienen la misma edad "+ elementoPersona.edad+ " years");
         }
     }
     return personaMenor;
