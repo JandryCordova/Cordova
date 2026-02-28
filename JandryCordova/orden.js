@@ -7,6 +7,7 @@ let Personas=[
     {nombre: "Benja", edad : 5}
 ]
 
+
 agregarPersona=function(){
     let NombrePerso=recuperarTexto("CajaTextoNombre");
     let EdadPersona=recuperarInt("CajaTextoEdad");
@@ -60,12 +61,41 @@ mostrarDatosTabla=function(){
 mostrarTabla=function(){
     mostrarDatosTabla();
 }
- //for (let i=0; i<EdadPersona.length; i++){
-   //             if(CodigoPersona>=48 && CodigoPersona <=100){
-     //           return esValido=true;
-       //         }else{
-         //           return mostrarTexto("ErrorCajaTexoNombre","La edad no se encuentra dentro del rango");
-           //     }
-            //}
 
-            //return mostrarTexto("ErrorCajaTexoNombre","El nombre tiene que tener un minimo de 3 caracteres");
+encontrarMayor=function(){
+    let personaMayor=Personas[0];
+    let elementoPersona;
+    for (let i=1; i<Personas.length; i++){
+        elementoPersona=Personas[i]
+        console.log(elementoPersona);
+        if(elementoPersona.edad > personaMayor.edad){
+            personaMayor=elementoPersona;
+        }
+    }
+    return personaMayor;
+}
+
+determinarMayor=function(){
+    mayor=encontrarMayor();
+    mostrarTexto("ResultadoMayor",mayor.nombre+ " es la mayor con "+ mayor.edad+ " years");
+}
+
+encontrarMenor=function(){
+    let personaMenor=Personas[0];
+    let elementoPersona;
+    for (let a=0;a<Personas.length; a++){
+        elementoPersona=Personas[a];
+        console.log(elementoPersona);
+        if(elementoPersona.edad < personaMenor.edad){
+            personaMenor=elementoPersona
+        }else{
+            mostrarTexto("ResultadoMenor",elementoPersona.nombre+ " y " +personaMenor.nombre+ " tienen la misma edad "+ elementoPersona.edad+ " years");
+        }
+    }
+    return personaMenor;
+}
+
+determinarMenor=function(){
+    Menor=encontrarMenor();
+    mostrarTexto("ResultadoMenor",Menor.nombre+ " es la menor con "+ Menor.edad+ " years");
+}
