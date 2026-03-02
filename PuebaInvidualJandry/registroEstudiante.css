@@ -1,0 +1,94 @@
+body{
+    background-image: url("Imagenes/FondoPantalla.jpg");
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-top: -20px;
+}
+
+.TituloPrincipal{
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.InformacionEstudiante{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    margin-top: -30px;
+}
+
+
+.CajaRegistro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    font-size: 16px;
+    padding-bottom: 10px;
+    
+}
+
+.TextoRegistro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.RespuestaCaja{
+    font-size: 20px;
+    margin: 12px;
+    display: flex;
+    align-items: end;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.TituloSecundario{
+    color: darkolivegreen;
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.Informacion{
+    background-color: burlywood;
+    margin-top: -20px;
+    margin-left: 490px;
+    margin-right: 490px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+}
+
+.Texto{
+    margin-bottom: 16px;
+    
+}
+
+.BotonGuardar{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 22px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+
+.Boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.BotonGuardar{
+    background-color: brown;
+    color: white;
+    font-size: 25px;
+}
