@@ -53,7 +53,7 @@ validarNombre=function(nombre){
 }
 
 validarCorreo=function(correo){
-    if(correo != null){
+    if(correo && correo.trim() != ""){
         mostrarTexto("ErrorCajaCorreo","");
         let CorreoElectronico = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(CorreoElectronico.test(correo)){
