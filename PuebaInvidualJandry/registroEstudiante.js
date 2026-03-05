@@ -1,19 +1,19 @@
 let Estudiantes=[];
 validarPalabra=function(palabra,cmpError){
     let codigo = palabra.charCodeAt(0);
-    if(codigo >= 65 && codigo <=90){
+    if(codigo >= 65 && codigo <=90 || codigo == 193 || codigo == 201 || codigo == 205 || codigo == 211 || codigo == 218 || codigo == 209){
         mostrarTexto(cmpError,"");
         for ( let a=1; a<palabra.length; a++){
             let posicion =palabra.charAt(a);
             let codePalabra = palabra.charCodeAt(a);
-            if (codePalabra >= 97 && codePalabra <= 122){
+            if (codePalabra >= 97 && codePalabra <= 122 || codePalabra==225 || codePalabra==233 || codePalabra == 237 || codePalabra == 243 || codePalabra == 250 || codePalabra == 241){
                 mostrarTexto(cmpError,"");
-                return true;
             }else{
                 mostrarTexto(cmpError,"La letra "+ posicion+ " debe ser minuscula");
                 return false;
             }        
         }
+        return true;
     }else{
         mostrarTexto(cmpError,"La primera letra debe ser mayuscula");
         return false;
@@ -209,6 +209,4 @@ eliminarEstudiante=function(){
     }
     
 }
-window.onload = function(){
-    MostraListaEstudiantes();
-}
+
