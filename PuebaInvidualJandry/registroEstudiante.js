@@ -85,6 +85,7 @@ validarCorreo=function(correo){
 }
 
 validarID=function(IdEstudiante){
+    mostrarTexto("ErrorCajaIdEstudiante","");
     if(IdEstudiante && IdEstudiante.trim() != ""){
         for ( let i=0; i<IdEstudiante.length; i++){
             let codigo=IdEstudiante.charCodeAt(i);
@@ -94,7 +95,7 @@ validarID=function(IdEstudiante){
             }
         }
     }else{
-        mostrarTexto("ErrorCajaIdEstudiante","El campo correo esta vacio");
+        mostrarTexto("ErrorCajaIdEstudiante","El campo ID esta vacio");
         return;
     }
 }
@@ -107,4 +108,5 @@ guardar=function(){
     validarNombre(Nombre);
     validarApellido(Apellido);
     validarCorreo(Correo);
+    validarID(IdEstudiante);
 }
