@@ -112,10 +112,6 @@ buscarEstudiante=function(idEstudiante){
     for (let a=0; a<Estudiantes.length; a++){
         let Recuperado=Estudiantes[a];
         if (Recuperado.id == idEstudiante){
-            mostrarTextoEnCaja("CajaNombres",Recuperado.nombre);
-            mostrarTextoEnCaja("CajaApellidos",Recuperado.apellido);
-            mostrarTextoEnCaja("CajaCorreoElectronico",Recuperado.correo);
-            mostrarTextoEnCaja("CajaIdEstudiante",Recuperado.id);
             deshabilitarComponente("CajaIdEstudiante");
             return Recuperado;
         }
@@ -159,6 +155,7 @@ guardar=function(){
                 return;
             }
         }
+        MostraListaEstudiantes();
         Limpiar();
     }else{
         console.log("GUARDADO SIN EXITO");
@@ -176,4 +173,22 @@ Limpiar=function(){
     mostrarTexto("ErrorCajaApellido","");
     mostrarTexto("ErrorCajaNombre","");
     habilitarComponente("CajaIdEstudiante");
+}
+
+MostraListaEstudiantes=function(){
+    let cmpTabla = document.getElementById("ListaEstudiantes");
+    let contenido= "<table>"+
+    "<th>NOMBRES</th>"+
+    "<th>APELLIDO</th>"+
+    "<th>CORREO</th>"+
+    "<th>ID ESTUDIANTE</th>"
+    for ( j=0; j<Estudiantes.length; j++){
+        let DatosEstudiantes=Estudiantes[j];
+        contenido+="<tr><td>"+DatosEstudiantes.nombre+"</td>"+
+        "<td>"+DatosEstudiantes.apellido+"</td>"+
+        "<td>"+DatosEstudiantes.correo+"</td>"+
+        "<td>"+DatosEstudiantes.id+"</td>"+"</tr>"
+    }
+    contenido+="</table>"
+    cmpTabla.innerHTML=contenido;
 }
