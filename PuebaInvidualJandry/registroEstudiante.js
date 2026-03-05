@@ -1,6 +1,25 @@
+validarPalabra=function(palabra,cmpError){
+    let codigo = palabra.charCodeAt(0);
+    if(codigo >= 65 && codigo <=90){
+        mostrarTexto(cmpError,"");
+        for ( let a=1; a<palabra.length; a++){
+            let posicion =palabra.charAt(a);
+            let codePalabra = palabra.charCodeAt(a);
+            if (codePalabra >= 97 && codePalabra <= 122){
+                mostrarTexto(cmpError,"");
+            }else{
+                mostrarTexto(cmpError,"La letra "+ posicion+ " debe ser minuscula");
+                return false;
+            }        
+        }
+    }else{
+        mostrarTexto(cmpError,"La primera letra debe ser mayuscula");
+        return false;
+    }
+}
+
 validarNombre=function(nombre){
-    let nombreRecu;
-    if(nombre != null){
+    if(nombre && nombre.trim() != ""){
         mostrarTexto("ErrorCajaNombre","");
         if(!nombre.includes(" ")){
             mostrarTexto("ErrorCajaNombre","El primero y segundo nombre debe estar Separados con un Espacio");
@@ -13,45 +32,43 @@ validarNombre=function(nombre){
         }
         let nombre1=partes[0];
         let nombre2=partes[1];
-        let CodigoNombre1 = nombre1.charCodeAt(0);
-        if(CodigoNombre1 >= 65 && CodigoNombre1<=90){
-            mostrarTexto("ErrorCajaNombre","");
-            for (let a=1; a<nombre1.length; a++){
-                let posicionNombre1 = nombre1.charAt(a)
-                let CodeNombre1=nombre1.charCodeAt(a)
-                if(CodeNombre1>=97 && CodeNombre1<=122){
-                    mostrarTexto("ErrorCajaNombre","");
-                    console.log(posicionNombre1);
-                }else{
-                    mostrarTexto("ErrorCajaNombre","La letra "+ posicionNombre1+ " debe ser minuscula");
-                }
-            }
+        NombreValidado=validarPalabra(nombre1,"ErrorCajaNombre");
+        if(NombreValidado==false){
+            return;
         }else{
-            mostrarTexto("ErrorCajaNombre","La primera letra debe ser mayuscula");
+            validarPalabra(nombre2,"ErrorCajaNombre");
         }
-        let CodigoNombre2 = nombre2.charCodeAt(0);
-        if(CodigoNombre2 >= 65 && CodigoNombre2<=90){
-            mostrarTexto("ErrorCajaNombre","");
-            for (let a=1; a<nombre2.length; a++){
-                let posicionNombre2 = nombre2.charAt(a)
-                let CodeNombre2=nombre2.charCodeAt(a)
-                if(CodeNombre2>=97 && CodeNombre2<=122){
-                    mostrarTexto("ErrorCajaNombre","");
-                    console.log(posicionNombre2);
-                }else{
-                    mostrarTexto("ErrorCajaNombre","La letra "+ posicionNombre2+ " debe ser minuscula");
-                }
-            }
-        }else{
-            mostrarTexto("ErrorCajaNombre","La primera letra debe ser mayuscula");
-        }
-        
+        return partes;
     }else{
         mostrarTexto("ErrorCajaNombre","El campo nombre esta vacio");
     }
     
 }
 
+validarApellido=function(apellido){
+    if (apellido  && apellido.trim() != ""){
+        mostrarTexto("ErrorCajaApellido","");
+        if(!apellido.includes(" ")){
+            mostrarTexto("ErrorCajaApellido","El primero y segundo apellido debe estar separados con un espacio");
+            return;
+        }
+        let partes=apellido.split(" ");
+        let apellido1=partes[0];
+        let apellido2=partes[1];
+        if(partes.length != 2){
+            mostrarTexto("ErrorCajaApellido","Solo debe tener un Maximo 2 Palabras");
+        }else{
+            let ApellidoValidado = validarPalabra(apellido1,"ErrorCajaApellido");
+            if (ApellidoValidado==false){
+                return;
+            }else{
+            validarPalabra(apellido2,"ErrorCajaApellido");
+            }
+        }
+    }else{
+        mostrarTexto("ErrorCajaApellido","El campo apellido esta vacio");
+    }
+}
 validarCorreo=function(correo){
     if(correo && correo.trim() != ""){
         mostrarTexto("ErrorCajaCorreo","");
@@ -67,11 +84,27 @@ validarCorreo=function(correo){
 
 }
 
+validarID=function(IdEstudiante){
+    if(IdEstudiante && IdEstudiante.trim() != ""){
+        for ( let i=0; i<IdEstudiante.length; i++){
+            let codigo=IdEstudiante.charCodeAt(i);
+            if(!(codigo>=48 && codigo<=57)){
+                mostrarTexto("ErrorCajaIdEstudiante","El ID es obligatorio y debe tener solo numeros");
+                return;
+            }
+        }
+    }else{
+        mostrarTexto("ErrorCajaIdEstudiante","El campo correo esta vacio");
+        return;
+    }
+}
+
 guardar=function(){
     Nombre=recuperarTexto("CajaNombres");
     Apellido=recuperarTexto("CajaApellidos");
     Correo=recuperarTexto("CajaCorreoElectronico");
     IdEstudiante=recuperarTexto("CajaIdEstudiante");
     validarNombre(Nombre);
+    validarApellido(Apellido);
     validarCorreo(Correo);
 }
