@@ -1,3 +1,4 @@
+let Estudiantes=[];
 validarPalabra=function(palabra,cmpError){
     let codigo = palabra.charCodeAt(0);
     if(codigo >= 65 && codigo <=90){
@@ -19,8 +20,8 @@ validarPalabra=function(palabra,cmpError){
 }
 
 validarNombre=function(nombre){
+    mostrarTexto("ErrorCajaNombre","");
     if(nombre && nombre.trim() != ""){
-        mostrarTexto("ErrorCajaNombre","");
         if(!nombre.includes(" ")){
             mostrarTexto("ErrorCajaNombre","El primero y segundo nombre debe estar Separados con un Espacio");
             return;
@@ -38,16 +39,17 @@ validarNombre=function(nombre){
         }else{
             validarPalabra(nombre2,"ErrorCajaNombre");
         }
-        return partes;
     }else{
         mostrarTexto("ErrorCajaNombre","El campo nombre esta vacio");
+        return;
     }
+    return true;
     
 }
 
 validarApellido=function(apellido){
+    mostrarTexto("ErrorCajaApellido","");
     if (apellido  && apellido.trim() != ""){
-        mostrarTexto("ErrorCajaApellido","");
         if(!apellido.includes(" ")){
             mostrarTexto("ErrorCajaApellido","El primero y segundo apellido debe estar separados con un espacio");
             return;
@@ -57,6 +59,7 @@ validarApellido=function(apellido){
         let apellido2=partes[1];
         if(partes.length != 2){
             mostrarTexto("ErrorCajaApellido","Solo debe tener un Maximo 2 Palabras");
+            return;
         }else{
             let ApellidoValidado = validarPalabra(apellido1,"ErrorCajaApellido");
             if (ApellidoValidado==false){
@@ -67,21 +70,25 @@ validarApellido=function(apellido){
         }
     }else{
         mostrarTexto("ErrorCajaApellido","El campo apellido esta vacio");
+        return;
     }
+    return true;
 }
 validarCorreo=function(correo){
+    mostrarTexto("ErrorCajaCorreo","");
     if(correo && correo.trim() != ""){
-        mostrarTexto("ErrorCajaCorreo","");
         let CorreoElectronico = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(CorreoElectronico.test(correo)){
             mostrarTexto("ErrorCajaCorreo","");
         }else{
             mostrarTexto("ErrorCajaCorreo","Ingrese un correo valido, Ejemplo: ejemplo@correo.com");
+            return;
         }
     }else{
         mostrarTexto("ErrorCajaCorreo","El campo correo esta vacio");
+        return;
     }
-
+    return true;
 }
 
 validarID=function(IdEstudiante){
@@ -98,15 +105,48 @@ validarID=function(IdEstudiante){
         mostrarTexto("ErrorCajaIdEstudiante","El campo ID esta vacio");
         return;
     }
+    return true;
+}
+
+buscarEstudiante=function(idEstudiante){
+    for (let a=0; a<Estudiantes.length; a++){
+        let Recuperado=Estudiantes[a];
+        if (Recuperado.id == idEstudiante){
+            mostrarTextoEnCaja("CajaNombres",Recuperado.nombre);
+            mostrarTextoEnCaja("CajaApellidos",Recuperado.apellido);
+            mostrarTextoEnCaja("CajaCorreoElectronico",Recuperado.correo);
+            mostrarTextoEnCaja("CajaIdEstudiante",Recuperado.id);
+            deshabilitarComponente("CajaIdEstudiante");
+            return Recuperado;
+        }
+    }
+    return null;
 }
 
 guardar=function(){
-    Nombre=recuperarTexto("CajaNombres");
-    Apellido=recuperarTexto("CajaApellidos");
-    Correo=recuperarTexto("CajaCorreoElectronico");
-    IdEstudiante=recuperarTexto("CajaIdEstudiante");
-    validarNombre(Nombre);
-    validarApellido(Apellido);
-    validarCorreo(Correo);
-    validarID(IdEstudiante);
+    let Nombre=recuperarTexto("CajaNombres");
+    let Apellido=recuperarTexto("CajaApellidos");
+    let Correo=recuperarTexto("CajaCorreoElectronico");
+    let IdEstudiante=recuperarTexto("CajaIdEstudiante");
+    let respuestaNombre=validarNombre(Nombre);
+    let respuestaApellido=validarApellido(Apellido);
+    let respuestaCorreo=validarCorreo(Correo);
+    let respuestaID=validarID(IdEstudiante);
+    if (respuestaNombre==true && respuestaApellido==true && respuestaCorreo==true && respuestaID==true){
+        let EncontradoEstudiante=buscarEstudiante(IdEstudiante);
+        if (EncontradoEstudiante==null){
+            let NuevoEstudiante={
+                nombre : Nombre,
+                apellido : Apellido,
+                correo : Correo,
+                id : IdEstudiante
+            }
+            Estudiantes.push(NuevoEstudiante);
+            alert ("ESTUDIANTE con ID: "+IdEstudiante+" AGREGADO CON EXITO");
+        }else{
+            alert ("YA EXISTE ESTUDIANTE CON ESTE ID");
+        }
+    }else{
+        console.log("GUARDADO SIN EXITO");
+    }
 }
