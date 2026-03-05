@@ -8,6 +8,7 @@ validarPalabra=function(palabra,cmpError){
             let codePalabra = palabra.charCodeAt(a);
             if (codePalabra >= 97 && codePalabra <= 122){
                 mostrarTexto(cmpError,"");
+                return true;
             }else{
                 mostrarTexto(cmpError,"La letra "+ posicion+ " debe ser minuscula");
                 return false;
@@ -33,7 +34,7 @@ validarNombre=function(nombre){
         }
         let nombre1=partes[0];
         let nombre2=partes[1];
-        NombreValidado=validarPalabra(nombre1,"ErrorCajaNombre");
+        let NombreValidado=validarPalabra(nombre1,"ErrorCajaNombre");
         if(NombreValidado==false){
             return;
         }else{
@@ -144,16 +145,11 @@ guardar=function(){
                 alert ("NO SE REALIZARON CAMBIOS");
                 return;
             }
-            let Confirmar = confirm("El estudiante ya esxiste, ¿Deseas actualizar los datos?");
-            if (Confirmar){
-                EncontradoEstudiante.nomnbre = Nombre,
-                EncontradoEstudiante.apellido = Apellido,
-                EncontradoEstudiante.correo = Correo
-                alert ("ACTUALIXADO CON EXITO");
-            }else{
-                alert ("ACTUALIZACION CANCELADA");
-                return;
-            }
+            EncontradoEstudiante.nombre = Nombre,
+            EncontradoEstudiante.apellido = Apellido,
+            EncontradoEstudiante.correo = Correo
+            alert ("ACTUALIZADO CON EXITO");
+            
         }
         MostraListaEstudiantes();
         Limpiar();
@@ -177,12 +173,12 @@ Limpiar=function(){
 
 MostraListaEstudiantes=function(){
     let cmpTabla = document.getElementById("ListaEstudiantes");
-    let contenido= "<table>"+
-    "<th>NOMBRES</th>"+
+    let contenido= "<table><tr>"+
+    "<th>NOMBRE</th>"+
     "<th>APELLIDO</th>"+
     "<th>CORREO</th>"+
-    "<th>ID ESTUDIANTE</th>"
-    for ( j=0; j<Estudiantes.length; j++){
+    "<th>ID ESTUDIANTE</th></tr>"
+    for (let j=0; j<Estudiantes.length; j++){
         let DatosEstudiantes=Estudiantes[j];
         contenido+="<tr><td>"+DatosEstudiantes.nombre+"</td>"+
         "<td>"+DatosEstudiantes.apellido+"</td>"+
@@ -191,4 +187,24 @@ MostraListaEstudiantes=function(){
     }
     contenido+="</table>"
     cmpTabla.innerHTML=contenido;
+}
+
+eliminarEstudiante=function(){
+    mostrarTexto("ErrorCajaIdEstudiante","");
+    let estudiante=recuperarTexto("CajaIdEstudiante");
+    if(estudiante && estudiante.trim() != "" ){
+        for(let h=0; h<Estudiantes.length; h++){
+            let RecuEstudiante = Estudiantes[h];
+            if (RecuEstudiante.id == estudiante){
+                Estudiantes.splice(h,1);
+                MostraListaEstudiantes();
+                return;
+            }
+        }
+        alert ("No se encontro estudiante")
+    }else{
+        mostrarTexto("ErrorCajaIdEstudiante","El campo ID esta vacio");
+        return;
+    }
+    
 }
