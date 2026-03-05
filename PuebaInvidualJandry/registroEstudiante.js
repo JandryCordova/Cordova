@@ -144,9 +144,36 @@ guardar=function(){
             Estudiantes.push(NuevoEstudiante);
             alert ("ESTUDIANTE con ID: "+IdEstudiante+" AGREGADO CON EXITO");
         }else{
-            alert ("YA EXISTE ESTUDIANTE CON ESTE ID");
+            if(EncontradoEstudiante.nombre == Nombre && EncontradoEstudiante.apellido == Apellido && EncontradoEstudiante.correo == Correo){
+                alert ("NO SE REALIZARON CAMBIOS");
+                return;
+            }
+            let Confirmar = confirm("El estudiante ya esxiste, ¿Deseas actualizar los datos?");
+            if (Confirmar){
+                EncontradoEstudiante.nomnbre = Nombre,
+                EncontradoEstudiante.apellido = Apellido,
+                EncontradoEstudiante.correo = Correo
+                alert ("ACTUALIXADO CON EXITO");
+            }else{
+                alert ("ACTUALIZACION CANCELADA");
+                return;
+            }
         }
+        Limpiar();
     }else{
         console.log("GUARDADO SIN EXITO");
     }
+    
+}
+
+Limpiar=function(){
+    mostrarTextoEnCaja("CajaNombres","");
+    mostrarTextoEnCaja("CajaApellidos","");
+    mostrarTextoEnCaja("CajaCorreoElectronico","");
+    mostrarTextoEnCaja("CajaIdEstudiante","");
+    mostrarTexto("ErrorCajaIdEstudiante","");
+    mostrarTexto("ErrorCajaCorreo","");
+    mostrarTexto("ErrorCajaApellido","");
+    mostrarTexto("ErrorCajaNombre","");
+    habilitarComponente("CajaIdEstudiante");
 }
