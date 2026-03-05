@@ -12,22 +12,44 @@ body{
     
 }
 
+.ContenedorRegistro{
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;  
+    align-items: center;
+    margin-top: 0px;
+    margin-right: 100px;
+    padding-left: 25px;
+    padding-right: 20px;
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
 .InformacionEstudiante{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: end;
-    margin-top: -30px;
+    margin-top: 0px;
+    padding-top: -30px;
+    
 }
 
+.ErrorCaja{
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
 
 .CajaRegistro{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     font-size: 16px;
-    padding-bottom: 10px;
+    
     
 }
 
@@ -35,7 +57,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: 16px;
+    margin-top: 0px;
 }
 
 .RespuestaCaja{
@@ -53,11 +77,11 @@ body{
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
-    padding-top: 10px;
+    
 }
 
 .Informacion{
-    background-color: burlywood;
+    
     margin-top: -20px;
     margin-left: 490px;
     margin-right: 490px;
@@ -66,7 +90,8 @@ body{
 }
 
 .Texto{
-    margin-bottom: 16px;
+    margin-bottom: 9px;
+    margin-top: 10px;
     
 }
 
@@ -78,17 +103,80 @@ body{
     padding-bottom: 5px;
     padding-top: 5px;
     border-radius: 10px;
+    margin-right: 20px;
 }
 
 .Boton{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     
 }
 
+.BotonEliminar{
+    background-color: red;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
 .BotonGuardar{
-    background-color: brown;
+    background-color: green;
     color: white;
     font-size: 25px;
+}
+
+.ContenedorTable{
+    background-color: silver;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #d6eaf8;
+}
+
+table {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    
+}
+
+.ContenidosRegsitroLista{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

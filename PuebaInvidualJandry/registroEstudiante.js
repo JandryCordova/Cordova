@@ -198,13 +198,17 @@ eliminarEstudiante=function(){
             if (RecuEstudiante.id == estudiante){
                 Estudiantes.splice(h,1);
                 MostraListaEstudiantes();
+                alert ("ESTUDIANTE ELIMINADO CORRECTAMENTE")
                 return;
             }
         }
-        alert ("No se encontro estudiante")
+        alert ("NO SE ENCONTRO ESTUDIANTE")
     }else{
-        mostrarTexto("ErrorCajaIdEstudiante","El campo ID esta vacio");
+        mostrarTexto("ErrorCajaIdEstudiante","EL CAMPO ID ESTA VACIO");
         return;
     }
     
+}
+window.onload = function(){
+    MostraListaEstudiantes();
 }
